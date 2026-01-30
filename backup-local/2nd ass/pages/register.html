@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register | DevConf 2026</title>
+</head>
+<body>
+
+<header>
+  <h1>Register for DevConf 2026</h1>
+</header>
+
+<nav>
+  <a href="index.html">Home</a> |
+  <a href="speakers.html">Speakers</a> |
+  <a href="contact.html">Contact</a>
+</nav>
+
+<main>
+
+<form method="POST" action="#">
+
+<!-- Personal Info -->
+<fieldset>
+  <legend>Personal Information</legend>
+
+  <label for="fname">First Name:</label>
+  <input type="text" id="fname" required><br><br>
+
+  <label for="lname">Last Name:</label>
+  <input type="text" id="lname" required><br><br>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" required><br><br>
+
+  <label for="phone">Phone:</label>
+  <input type="tel" id="phone"><br><br>
+
+  <label for="dob">Date of Birth:</label>
+  <input type="date" id="dob">
+</fieldset>
+
+<!-- Professional -->
+<fieldset>
+  <legend>Professional Details</legend>
+
+  <label>Job Title:</label>
+  <input type="text"><br><br>
+
+  <label>Years of Experience:</label>
+  <input type="number" min="0" max="50">
+</fieldset>
+
+<!-- Preferences -->
+<fieldset>
+  <legend>Preferences</legend>
+
+  Attendance Type:<br>
+  <input type="radio" name="mode"> In-Person
+  <input type="radio" name="mode"> Virtual
+  <input type="radio" name="mode"> Hybrid<br><br>
+
+  Workshops:<br>
+  <input type="checkbox"> Web Dev
+  <input type="checkbox"> Cybersecurity
+  <input type="checkbox"> AI
+</fieldset>
+
+<!-- Terms -->
+<fieldset>
+  <legend>Terms</legend>
+  <input type="checkbox" required> I agree to Terms & Conditions
+</fieldset>
+
+<br>
+<button type="submit">Submit</button>
+<button type="reset">Reset</button>
+
+</form>
+
+</main>
+
+<footer>
+  <p>© 2026 DevConf</p>
+</footer>
+
+</body>
+</html>
