@@ -2,44 +2,106 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Schedule | DevConf 2026</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body>
 
-<nav>
-  <a href="index.html">Home</a> |
-  <a href="about.html">About</a> |
-  <a href="speakers.html">Speakers</a> |
-  <a href="schedule.html">Schedule</a> |
-  <a href="sponsors.html">Sponsors</a>
-</nav>
+<body class="page-schedule">
 
-<h1>Conference Schedule</h1>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="speakers.html">Speakers</a></li>
+      <li><a class="active" href="schedule.html">Schedule</a></li>
+      <li><a href="sponsors.html">Sponsors</a></li>
+    </ul>
+  </nav>
 
-<h2>Day 1</h2>
-<table border="1">
-<thead>
-<tr><th>Time</th><th>Session</th><th>Speaker</th><th>Room</th></tr>
-</thead>
-<tbody>
-<tr><td>09:00</td><td>Opening Keynote</td><td>Alex Johnson</td><td>Main Hall</td></tr>
-<tr><td>10:30</td><td>Web Security</td><td>Jane Doe</td><td>Room A</td></tr>
-</tbody>
-</table>
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>Conference Schedule</h1>
+    <p>
+      Explore the full agenda for both days of DevConf 2026,
+      including keynotes, technical sessions, and talks.
+    </p>
+  </header>
 
-<h2>Day 2</h2>
-<table border="1">
-<thead>
-<tr><th>Time</th><th>Session</th><th>Speaker</th><th>Room</th></tr>
-</thead>
-<tbody>
-<tr><td>09:00</td><td>AI in 2026</td><td>Mark Lee</td><td>Main Hall</td></tr>
-</tbody>
-</table>
+  <!-- Main Content -->
+  <main class="container">
 
-<footer>
-  <p>© 2026 DevConf</p>
-</footer>
+    <div class="schedule-wrapper">
+
+      <!-- Day 1 -->
+      <section class="schedule-day">
+        <h2>Day 1 – March 15</h2>
+
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Session</th>
+              <th>Speaker</th>
+              <th>Room</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>09:00</td>
+              <td>Opening Keynote</td>
+              <td>Alex Johnson</td>
+              <td>Main Hall</td>
+            </tr>
+            <tr>
+              <td>10:30</td>
+              <td>Web Security</td>
+              <td>Jane Doe</td>
+              <td>Room A</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Day 2 -->
+      <section class="schedule-day">
+        <h2>Day 2 – March 16</h2>
+
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Session</th>
+              <th>Speaker</th>
+              <th>Room</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>09:00</td>
+              <td>AI in 2026</td>
+              <td>Mark Lee</td>
+              <td>Main Hall</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>© 2026 DevConf</p>
+  </footer>
 
 </body>
 </html>

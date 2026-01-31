@@ -3,75 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <title>DevConf 2026 | Home</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body>
 
-<!-- Header -->
-<header>
-  <h1>DevConf 2026</h1>
-  <p>March 15–16, 2026 | Mumbai, India</p>
-</header>
+<body class="page-home">
 
-<!-- Navigation -->
-<nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="speakers.html">Speakers</a></li>
-    <li><a href="schedule.html">Schedule</a></li>
-    <li><a href="sponsors.html">Sponsors</a></li>
-    <li><a href="register.html">Register</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-  </ul>
-</nav>
+  <!-- Header / Hero -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>DevConf 2026</h1>
+      <p class="hero-subtitle">Where Developers Meet Innovation</p>
+    </div>
+  </header>
 
-<main>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a class="active" href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="speakers.html">Speakers</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="sponsors.html">Sponsors</a></li>
+      <li><a class="nav-cta" href="register.html">Register</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul>
+  </nav>
 
-<!-- Hero Video -->
-<section>
-  <video autoplay muted loop width="30%">
-    <source src="../assets/videos/promo.mp4" type="video/mp4">
-    Your browser does not support video.
-  </video>
-</section>
+  <main class="container">
 
-<!-- About -->
-<section>
-  <h2>About DevConf</h2>
-  <p>DevConf 2026 is a premier technology conference for developers and IT professionals.</p>
-</section>
+    <!-- Hero Video -->
+    <section class="hero-media">
+      <video autoplay muted loop playsinline>
+        <source src="../assets/videos/promo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </section>
 
-<!-- Stats -->
-<section>
-  <table border="1">
-    <thead>
-      <tr>
-        <th>Attendees</th>
-        <th>Speakers</th>
-        <th>Sessions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1200+</td>
-        <td>40+</td>
-        <td>60+</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
+    <!-- About Section -->
+    <section class="home-about">
+      <h2>About DevConf</h2>
+      <p>
+        DevConf 2026 is a premier technology conference bringing together
+        developers, engineers, and IT professionals from across the globe.
+      </p>
+    </section>
 
-<!-- CTA -->
-<section>
-  <a href="register.html">Register Now</a>
-</section>
+    <!-- Stats Section -->
+    <section class="home-stats">
+      <div class="stat-card">
+        <span class="stat-number">1200+</span>
+        <span class="stat-label">Attendees</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">40+</span>
+        <span class="stat-label">Speakers</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">60+</span>
+        <span class="stat-label">Sessions</span>
+      </div>
+    </section>
 
-</main>
+    <!-- CTA -->
+    <section class="home-cta">
+      <a href="register.html" class="cta-button">Register Now</a>
+    </section>
 
-<footer>
-  <p>© 2026 DevConf</p>
-</footer>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>© 2026 DevConf</p>
+  </footer>
 
 </body>
 </html>

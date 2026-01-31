@@ -2,64 +2,120 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Speakers | DevConf 2026</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body>
 
-<header><h1>Keynote Speakers</h1></header>
+<body class="page-speakers">
 
-<nav>
-  <a href="index.html">Home</a> |
-  <a href="register.html">Register</a>
-</nav>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a class="active" href="speakers.html">Speakers</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="register.html">Register</a></li>
+    </ul>
+  </nav>
 
-<main>
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>Keynote Speakers</h1>
+    <p>
+      Meet industry experts and leaders who will be sharing
+      real-world insights at DevConf 2026.
+    </p>
+  </header>
 
-<!-- Speaker 1 -->
-<article>
-  <h3>Alex Johnson</h3>
-  <img src="../assets/images/speaker1.jpg" alt="Alex Johnson" width="150">
+  <!-- Main Content -->
+  <main class="container">
 
-  <video controls width="300" poster="../assets/images/speaker1.jpg">
-    <source src="../assets/videos/speaker1.mp4" type="video/mp4">
-    <source src="../assets/videos/speaker1.webm" type="video/webm">
-    Video not supported.
-  </video>
+    <div class="speakers-grid">
 
-  <p>Senior Software Engineer with 10+ years experience.</p>
-</article>
+      <!-- Speaker 1 -->
+      <article class="speaker-card">
+        <img src="../assets/images/speaker1.jpg" alt="Alex Johnson">
 
-<article>
-  <h3>Alex Johnson</h3>
-  <img src="../assets/images/speaker2.jpg" alt="Alex Johnson" width="150">
+        <div class="speaker-content">
+          <h3>Alex Johnson</h3>
+          <p class="speaker-role">Senior Software Engineer</p>
 
-  <video controls width="300" poster="../assets/images/speaker2.jpg">
-    <source src="../assets/videos/speaker2.mp4" type="video/mp4">
-    <source src="../assets/videos/speaker2.webm" type="video/webm">
-    Video not supported.
-  </video>
+          <div class="speaker-media">
+            <video controls poster="../assets/images/speaker1.jpg">
+              <source src="../assets/videos/speaker1.mp4" type="video/mp4">
+              <source src="../assets/videos/speaker1.webm" type="video/webm">
+              Your browser does not support the video tag.
+            </video>
+          </div>
 
-  <p>Senior Software Engineer with 10+ years experience.</p>
-</article>
+          <p class="speaker-bio">
+            Senior Software Engineer with over 10 years of experience
+            building scalable web applications.
+          </p>
+        </div>
+      </article>
 
-<article>
-  <h3>Alex Johnson</h3>
-  <img src="../assets/images/speaker3.jpg" alt="Alex Johnson" width="150">
+      <!-- Speaker 2 -->
+      <article class="speaker-card">
+        <img src="../assets/images/speaker2.jpg" alt="Alex Johnson">
 
-  <video controls width="300" poster="../assets/images/speaker3.jpg">
-    <source src="../assets/videos/speaker3.mp4" type="video/mp4">
-    <source src="../assets/videos/speaker3.webm" type="video/webm">
-    Video not supported.
-  </video>
+        <div class="speaker-content">
+          <h3>Alex Johnson</h3>
+          <p class="speaker-role">Senior Software Engineer</p>
 
-  <p>Senior Software Engineer with 10+ years experience.</p>
-</article>
+          <div class="speaker-media">
+            <video controls poster="../assets/images/speaker2.jpg">
+              <source src="../assets/videos/speaker2.mp4" type="video/mp4">
+              <source src="../assets/videos/speaker2.webm" type="video/webm">
+              Your browser does not support the video tag.
+            </video>
+          </div>
 
-</main>
+          <p class="speaker-bio">
+            Senior Software Engineer with over 10 years of experience
+            building scalable web applications.
+          </p>
+        </div>
+      </article>
 
-<footer>
-  <p>© 2026 DevConf</p>
-</footer>
+      <!-- Speaker 3 -->
+      <article class="speaker-card">
+        <img src="../assets/images/speaker3.jpg" alt="Alex Johnson">
+
+        <div class="speaker-content">
+          <h3>Alex Johnson</h3>
+          <p class="speaker-role">Senior Software Engineer</p>
+
+          <div class="speaker-media">
+            <video controls poster="../assets/images/speaker3.jpg">
+              <source src="../assets/videos/speaker3.mp4" type="video/mp4">
+              <source src="../assets/videos/speaker3.webm" type="video/webm">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <p class="speaker-bio">
+            Senior Software Engineer with over 10 years of experience
+            building scalable web applications.
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>© 2026 DevConf</p>
+  </footer>
 
 </body>
 </html>

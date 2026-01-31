@@ -3,59 +3,126 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>About DevConf 2026</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body>
 
-<nav>
-  <a href="index.html">Home</a> |
-  <a href="about.html">About</a> |
-  <a href="speakers.html">Speakers</a> |
-  <a href="schedule.html">Schedule</a> |
-  <a href="sponsors.html">Sponsors</a>
-</nav>
+<body class="page-about">
 
-<h1>About DevConf 2026</h1>
-<p>DevConf started as a small developer meetup and has grown into a global tech conference.</p>
-<p>Our mission is to empower developers with knowledge and industry exposure.</p>
-<p>Each year, we bring practical insights from real‑world experts.</p>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a class="active" href="about.html">About</a></li>
+      <li><a href="speakers.html">Speakers</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="sponsors.html">Sponsors</a></li>
+    </ul>
+  </nav>
 
-<h2>Why Attend?</h2>
-<ul>
-  <li>Learn from top industry experts</li>
-  <li>Upgrade technical skills</li>
-  <li>Career networking opportunities</li>
-</ul>
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>About DevConf 2026</h1>
+    <p>
+      From a small meetup to a global technology conference — empowering
+      developers through knowledge and collaboration.
+    </p>
+  </header>
 
-<h2>Target Audience</h2>
-<ol>
-  <li>Software Developers</li>
-  <li>System Architects</li>
-  <li>Cybersecurity Professionals</li>
-  <li>Students & Tech Enthusiasts</li>
-</ol>
+  <!-- Main Content -->
+  <main class="container">
 
-<h2>Conference Tracks</h2>
-<h3>Web Development</h3>
-<p>Modern frameworks, performance, and accessibility.</p>
-<h3>Cybersecurity</h3>
-<p>Threat analysis, defense strategies, and best practices.</p>
-<h3>AI & Cloud</h3>
-<p>Machine learning, DevOps, and cloud computing.</p>
+    <!-- About Text -->
+    <section class="about-content">
+      <p>
+        DevConf started as a small developer meetup and has grown into a global
+        tech conference.
+      </p>
+      <p>
+        Our mission is to empower developers with knowledge and industry
+        exposure.
+      </p>
+      <p>
+        Each year, we bring practical insights from real-world experts.
+      </p>
+    </section>
 
-<table border="1">
-  <thead>
-    <tr><th>Year</th><th>Attendees</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>2024</td><td>800</td></tr>
-    <tr><td>2025</td><td>1000</td></tr>
-  </tbody>
-</table>
+    <!-- Why Attend -->
+    <section class="about-section">
+      <h2>Why Attend?</h2>
+      <ul class="about-list">
+        <li>Learn from top industry experts</li>
+        <li>Upgrade technical skills</li>
+        <li>Career networking opportunities</li>
+      </ul>
+    </section>
 
-<footer>
-  <p>© 2026 DevConf</p>
-</footer>
+    <!-- Target Audience -->
+    <section class="about-section">
+      <h2>Target Audience</h2>
+      <ol class="about-list ordered">
+        <li>Software Developers</li>
+        <li>System Architects</li>
+        <li>Cybersecurity Professionals</li>
+        <li>Students & Tech Enthusiasts</li>
+      </ol>
+    </section>
+
+    <!-- Tracks -->
+    <section class="about-section">
+      <h2>Conference Tracks</h2>
+
+      <div class="track">
+        <h3>Web Development</h3>
+        <p>Modern frameworks, performance, and accessibility.</p>
+      </div>
+
+      <div class="track">
+        <h3>Cybersecurity</h3>
+        <p>Threat analysis, defense strategies, and best practices.</p>
+      </div>
+
+      <div class="track">
+        <h3>AI & Cloud</h3>
+        <p>Machine learning, DevOps, and cloud computing.</p>
+      </div>
+    </section>
+
+    <!-- Stats Table -->
+    <section class="about-section">
+      <h2>Event Growth</h2>
+      <table class="about-table">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Attendees</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2024</td>
+            <td>800</td>
+          </tr>
+          <tr>
+            <td>2025</td>
+            <td>1000</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>© 2026 DevConf</p>
+  </footer>
 
 </body>
 </html>

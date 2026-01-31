@@ -2,87 +2,142 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Register | DevConf 2026</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body>
 
-<header>
-  <h1>Register for DevConf 2026</h1>
-</header>
+<body class="page-register">
 
-<nav>
-  <a href="index.html">Home</a> |
-  <a href="speakers.html">Speakers</a> |
-  <a href="contact.html">Contact</a>
-</nav>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="speakers.html">Speakers</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a class="active" href="register.html">Register</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-<main>
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>Register for DevConf 2026</h1>
+    <p>
+      Secure your spot at DevConf 2026 by completing the registration form below.
+    </p>
+  </header>
 
-<form method="POST" action="#">
+  <!-- Main Content -->
+  <main class="container">
 
-<!-- Personal Info -->
-<fieldset>
-  <legend>Personal Information</legend>
+    <div class="register-wrapper">
 
-  <label for="fname">First Name:</label>
-  <input type="text" id="fname" required><br><br>
+      <form method="POST" action="#">
 
-  <label for="lname">Last Name:</label>
-  <input type="text" id="lname" required><br><br>
+        <!-- Personal Information -->
+        <fieldset>
+          <legend>Personal Information</legend>
 
-  <label for="email">Email:</label>
-  <input type="email" id="email" required><br><br>
+          <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" required>
+          </div>
 
-  <label for="phone">Phone:</label>
-  <input type="tel" id="phone"><br><br>
+          <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" required>
+          </div>
 
-  <label for="dob">Date of Birth:</label>
-  <input type="date" id="dob">
-</fieldset>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+          </div>
 
-<!-- Professional -->
-<fieldset>
-  <legend>Professional Details</legend>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone">
+          </div>
 
-  <label>Job Title:</label>
-  <input type="text"><br><br>
+          <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob">
+          </div>
+        </fieldset>
 
-  <label>Years of Experience:</label>
-  <input type="number" min="0" max="50">
-</fieldset>
+        <!-- Professional Details -->
+        <fieldset>
+          <legend>Professional Details</legend>
 
-<!-- Preferences -->
-<fieldset>
-  <legend>Preferences</legend>
+          <div class="form-group">
+            <label>Job Title</label>
+            <input type="text">
+          </div>
 
-  Attendance Type:<br>
-  <input type="radio" name="mode"> In-Person
-  <input type="radio" name="mode"> Virtual
-  <input type="radio" name="mode"> Hybrid<br><br>
+          <div class="form-group">
+            <label>Years of Experience</label>
+            <input type="number" min="0" max="50">
+          </div>
+        </fieldset>
 
-  Workshops:<br>
-  <input type="checkbox"> Web Dev
-  <input type="checkbox"> Cybersecurity
-  <input type="checkbox"> AI
-</fieldset>
+        <!-- Preferences -->
+        <fieldset>
+          <legend>Preferences</legend>
 
-<!-- Terms -->
-<fieldset>
-  <legend>Terms</legend>
-  <input type="checkbox" required> I agree to Terms & Conditions
-</fieldset>
+          <div class="form-group">
+            <label>Attendance Type</label>
+            <div class="inline-options">
+              <label><input type="radio" name="mode"> In-Person</label>
+              <label><input type="radio" name="mode"> Virtual</label>
+              <label><input type="radio" name="mode"> Hybrid</label>
+            </div>
+          </div>
 
-<br>
-<button type="submit">Submit</button>
-<button type="reset">Reset</button>
+          <div class="form-group">
+            <label>Workshops</label>
+            <div class="inline-options">
+              <label><input type="checkbox"> Web Dev</label>
+              <label><input type="checkbox"> Cybersecurity</label>
+              <label><input type="checkbox"> AI</label>
+            </div>
+          </div>
+        </fieldset>
 
-</form>
+        <!-- Terms -->
+        <fieldset>
+          <legend>Terms</legend>
 
-</main>
+          <div class="form-group">
+            <label class="inline-checkbox">
+              <input type="checkbox" required>
+              I agree to the Terms & Conditions
+            </label>
+          </div>
+        </fieldset>
 
-<footer>
-  <p>© 2026 DevConf</p>
-</footer>
+        <!-- Actions -->
+        <div class="form-actions">
+          <button type="submit">Submit Registration</button>
+          <button type="reset" class="secondary-btn">Reset</button>
+        </div>
+
+      </form>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>© 2026 DevConf</p>
+  </footer>
 
 </body>
 </html>

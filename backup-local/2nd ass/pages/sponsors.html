@@ -2,41 +2,102 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Sponsors | DevConf 2026</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body>
 
-<nav>
-  <a href="index.html">Home</a> |
-  <a href="about.html">About</a> |
-  <a href="speakers.html">Speakers</a> |
-  <a href="schedule.html">Schedule</a> |
-  <a href="sponsors.html">Sponsors</a>
-</nav>
+<body class="page-sponsors">
 
-<h1>Our Sponsors</h1>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="speakers.html">Speakers</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a class="active" href="sponsors.html">Sponsors</a></li>
+    </ul>
+  </nav>
 
-<h2>Platinum Sponsors</h2>
-<img src="../assets/images/sponsor-platinum.jpg" alt="Platinum Sponsor" width="150">
-<p>Leading global technology partner.</p>
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>Our Sponsors</h1>
+    <p>
+      We are proud to be supported by industry-leading organizations
+      that help make DevConf 2026 possible.
+    </p>
+  </header>
 
-<h2>Sponsor Benefits</h2>
-<table border="1">
-<thead>
-<tr><th>Tier</th><th>Benefits</th></tr>
-</thead>
-<tbody>
-<tr><td>Platinum</td><td>Keynote branding, booth</td></tr>
-<tr><td>Gold</td><td>Booth, logo placement</td></tr>
-<tr><td>Silver</td><td>Logo placement</td></tr>
-</tbody>
-</table>
+  <!-- Main Content -->
+  <main class="container">
 
-<p><a href="mailto:sponsor@devconf.com">Become a Sponsor</a></p>
+    <div class="sponsors-wrapper">
 
-<footer>
-  <p>© 2026 DevConf</p>
-</footer>
+      <!-- Platinum Sponsors -->
+      <section class="sponsor-tier">
+        <h2>Platinum Sponsors</h2>
+
+        <div class="sponsor-grid">
+          <div class="sponsor-card">
+            <img src="../assets/images/sponsor-platinum.jpg" alt="Platinum Sponsor">
+            <p>Leading global technology partner.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sponsor Benefits -->
+      <section class="sponsor-benefits">
+        <h2>Sponsor Benefits</h2>
+
+        <table class="sponsor-table">
+          <thead>
+            <tr>
+              <th>Tier</th>
+              <th>Benefits</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Platinum</td>
+              <td>Keynote branding, premium booth</td>
+            </tr>
+            <tr>
+              <td>Gold</td>
+              <td>Booth, logo placement</td>
+            </tr>
+            <tr>
+              <td>Silver</td>
+              <td>Logo placement</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- CTA -->
+      <section class="sponsor-cta">
+        <p>
+          Interested in partnering with DevConf 2026?
+        </p>
+        <a href="mailto:sponsor@devconf.com" class="cta-button">
+          Become a Sponsor
+        </a>
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>© 2026 DevConf</p>
+  </footer>
 
 </body>
 </html>
