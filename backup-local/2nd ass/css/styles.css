@@ -750,3 +750,489 @@ a {
   margin-bottom: 1.5rem;
   font-size: 1.05rem;
 }
+/* =====================================================
+   DAY 4 – ADVANCED LAYOUT ENHANCEMENTS (APPENDED)
+   Flexbox • Grid • Variables • Positioning
+===================================================== */
+
+/* =====================
+   CSS VARIABLES (DAY 4)
+===================== */
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1e40af;
+  --dark-bg: #020617;
+  --light-bg: #f8fafc;
+  --surface: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+
+  --shadow-soft: 0 10px 25px rgba(0,0,0,0.08);
+  --shadow-strong: 0 20px 45px rgba(0,0,0,0.12);
+
+  --gap-sm: 1rem;
+  --gap-md: 2rem;
+  --gap-lg: 3rem;
+}
+
+/* =====================
+   FLEXBOX NAV UPGRADE
+===================== */
+.nav-links {
+  align-items: center;
+}
+
+.navbar {
+  z-index: 1200;
+}
+
+/* =====================
+   HERO BACKGROUND CONTROL
+===================== */
+.hero {
+  background-size: cover;
+  background-position: center;
+}
+
+/* =====================
+   GRID UPGRADE (SPEAKERS)
+===================== */
+.page-speakers .speakers-grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--gap-lg);
+}
+
+/* =====================
+   CARD DEPTH ENHANCEMENT
+===================== */
+.speaker-card,
+.stat-card,
+.page-sponsors .sponsor-card {
+  box-shadow: var(--shadow-soft);
+}
+
+.speaker-card:hover,
+.page-sponsors .sponsor-card:hover {
+  box-shadow: var(--shadow-strong);
+}
+
+/* =====================
+   SCHEDULE TABLE SPACING
+===================== */
+.page-schedule .schedule-table th,
+.page-schedule .schedule-table td {
+  padding: 1.1rem;
+}
+
+/* =====================
+   GAP NORMALIZATION
+===================== */
+.home-stats,
+.page-speakers .speakers-grid,
+.page-sponsors .sponsor-grid {
+  gap: var(--gap-lg);
+}
+
+/* =====================
+   CTA BUTTON CONSISTENCY
+===================== */
+.cta-button {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+}
+
+/* =====================
+   Z-INDEX CLARITY
+===================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1500;
+}
+
+/* =====================
+   RESPONSIVE GRID POLISH
+===================== */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-wrap: wrap;
+    row-gap: var(--gap-sm);
+  }
+}
+/* =====================================================
+   INDEX PAGE – HERO & NAV FIX (PROFESSIONAL LAYOUT)
+===================================================== */
+
+/* NAV: visually separate from hero */
+.navbar {
+  background: rgba(2, 6, 23, 0.92);
+  backdrop-filter: blur(8px);
+}
+
+/* HERO STRUCTURE */
+.hero {
+  min-height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 4rem; /* prevents nav overlap */
+}
+
+/* HERO CONTENT */
+.hero-inner {
+  text-align: center;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+/* TITLE */
+.hero-title {
+  font-size: clamp(2.6rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.8rem;
+}
+
+/* TAGLINE */
+.hero-tagline {
+  font-size: 1.25rem;
+  color: #c7d2fe;
+  margin-bottom: 1rem;
+}
+
+/* META INFO */
+.hero-meta {
+  font-size: 0.95rem;
+  color: #94a3b8;
+}
+
+/* NAV ACTIVE LINK – SUBTLE */
+.nav-links a.active::after {
+  height: 3px;
+  border-radius: 2px;
+}
+
+/* REMOVE VISUAL CLASH */
+.page-home main {
+  margin-top: -2rem;
+}
+
+/* MOBILE HERO TWEAK */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 55vh;
+    padding-top: 3rem;
+  }
+
+  .hero-title {
+    font-size: 2.3rem;
+  }
+}
+/* =====================================================
+   INDEX PAGE – CLEAN PROFESSIONAL HERO & NAV
+===================================================== */
+
+/* ---------- NAVIGATION ---------- */
+
+.navbar-solid {
+  background: #020617;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.nav-links a {
+  font-size: 0.95rem;
+}
+
+.nav-links a.active::after {
+  bottom: -4px;
+}
+
+/* ---------- HERO (COMPACT & LEFT-ALIGNED) ---------- */
+
+.hero-compact {
+  background: linear-gradient(135deg, #020617, #1e293b);
+  padding: 3.5rem 1.5rem 3rem;
+}
+
+.hero-content {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.hero-compact h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.hero-tagline {
+  font-size: 1.1rem;
+  color: #c7d2fe;
+  margin-bottom: 0.5rem;
+}
+
+.hero-meta {
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+/* ---------- REMOVE EXCESS SPACE ---------- */
+
+.page-home main {
+  margin-top: 0;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    row-gap: 0.8rem;
+  }
+
+  .hero-compact h1 {
+    font-size: 2rem;
+  }
+}
+/* =====================================================
+   INDEX – CLEAN CONFERENCE LAYOUT (FINAL)
+===================================================== */
+
+/* ---------- NAVIGATION ---------- */
+
+.navbar-clean {
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  z-index: 2000;
+}
+
+.nav-wrapper {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0.9rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #0f172a;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.nav-links a {
+  font-size: 0.9rem;
+  color: #334155;
+}
+
+.nav-links a:hover {
+  color: #2563eb;
+}
+
+.nav-links a.active {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.btn-register {
+  background: #2563eb;
+  color: #ffffff !important;
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+/* ---------- HEADER STRIP ---------- */
+
+.header-strip {
+  background: #f8fafc;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.header-content {
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem 1.5rem 1.5rem;
+}
+
+.header-content h1 {
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+}
+
+.header-content p {
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+/* ---------- REMOVE HERO DOMINANCE ---------- */
+
+.page-home main {
+  margin-top: 0;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    row-gap: 0.6rem;
+  }
+
+  .header-content h1 {
+    font-size: 1.7rem;
+  }
+}
+
+/* =====================================================
+   SIDEBAR LAYOUT – INDEX PAGE
+===================================================== */
+
+.layout-sidebar {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ---------- SIDEBAR ---------- */
+
+.sidebar {
+  width: 240px;
+  background: #020617;
+  color: #e5e7eb;
+  padding: 2rem 1.5rem;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.sidebar-brand {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.sidebar-sub {
+  display: block;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-top: 0.2rem;
+}
+
+/* Sidebar Nav */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.sidebar-nav a {
+  color: #cbd5f5;
+  font-size: 0.95rem;
+}
+
+.sidebar-nav a:hover {
+  color: #ffffff;
+}
+
+.sidebar-nav a.active {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.sidebar-cta {
+  margin-top: 1.5rem;
+  background: #2563eb;
+  color: #ffffff !important;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  text-align: center;
+}
+
+/* ---------- CONTENT AREA ---------- */
+
+.content-area {
+  margin-left: 240px;
+  width: calc(100% - 240px);
+  background: #f8fafc;
+}
+
+.page-title {
+  padding: 2rem 2.5rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.page-title h1 {
+  font-size: 1.8rem;
+}
+
+.page-title p {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+/* Main content spacing */
+.content {
+  padding: 2.5rem;
+}
+
+/* Video size control */
+.hero-media video {
+  max-width: 420px;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 900px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .content-area {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .layout-sidebar {
+    flex-direction: column;
+  }
+}

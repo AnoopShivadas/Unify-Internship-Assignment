@@ -11,76 +11,84 @@
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 
-<body class="page-home">
+<body class="page-home layout-sidebar">
 
-  <!-- Header / Hero -->
-  <header class="hero">
-    <div class="hero-content">
-      <h1>DevConf 2026</h1>
-      <p class="hero-subtitle">Where Developers Meet Innovation</p>
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      DevConf 2026
+      <span class="sidebar-sub">Mumbai · 2026</span>
     </div>
-  </header>
 
-  <!-- Navigation -->
-  <nav class="navbar">
-    <ul class="nav-links">
-      <li><a class="active" href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="speakers.html">Speakers</a></li>
-      <li><a href="schedule.html">Schedule</a></li>
-      <li><a href="sponsors.html">Sponsors</a></li>
-      <li><a class="nav-cta" href="register.html">Register</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-    </ul>
-  </nav>
+    <nav class="sidebar-nav">
+      <a class="active" href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="speakers.html">Speakers</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="sponsors.html">Sponsors</a>
+      <a href="contact.html">Contact</a>
+      <a href="faq.html">FAQ</a>
 
-  <main class="container">
+      <a href="register.html" class="sidebar-cta">Register</a>
+    </nav>
+  </aside>
 
-    <!-- Hero Video -->
-    <section class="hero-media">
-      <video autoplay muted loop playsinline>
-        <source src="../assets/videos/promo.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </section>
+  <!-- Main Content -->
+  <div class="content-area">
 
-    <!-- About Section -->
-    <section class="home-about">
-      <h2>About DevConf</h2>
-      <p>
-        DevConf 2026 is a premier technology conference bringing together
-        developers, engineers, and IT professionals from across the globe.
-      </p>
-    </section>
+    <!-- Page Header -->
+    <header class="page-title">
+      <h1>DevConf 2026</h1>
+      <p>March 15–16, 2026 · Mumbai, India</p>
+    </header>
 
-    <!-- Stats Section -->
-    <section class="home-stats">
-      <div class="stat-card">
-        <span class="stat-number">1200+</span>
-        <span class="stat-label">Attendees</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-number">40+</span>
-        <span class="stat-label">Speakers</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-number">60+</span>
-        <span class="stat-label">Sessions</span>
-      </div>
-    </section>
+    <main class="content">
 
-    <!-- CTA -->
-    <section class="home-cta">
-      <a href="register.html" class="cta-button">Register Now</a>
-    </section>
+      <!-- Video -->
+      <section class="hero-media">
+        <video autoplay muted loop playsinline>
+          <source src="../assets/videos/promo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </section>
 
-  </main>
+      <!-- About -->
+      <section class="home-about">
+        <h2>About DevConf</h2>
+        <p>
+          DevConf 2026 is a premier technology conference bringing together
+          developers, engineers, and IT professionals from across the globe.
+        </p>
+      </section>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <p>© 2026 DevConf</p>
-  </footer>
+      <!-- Stats -->
+      <section class="home-stats">
+        <div class="stat-card">
+          <span class="stat-number">1200+</span>
+          <span class="stat-label">Attendees</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">40+</span>
+          <span class="stat-label">Speakers</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">60+</span>
+          <span class="stat-label">Sessions</span>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="home-cta">
+        <a href="register.html" class="cta-button">Register Now</a>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2026 DevConf</p>
+    </footer>
+
+  </div>
 
 </body>
 </html>
