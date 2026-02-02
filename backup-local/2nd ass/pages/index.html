@@ -13,44 +13,66 @@
 
 <body class="page-home layout-sidebar">
 
-  <!-- Sidebar Navigation -->
-  <aside class="sidebar">
-    <div class="sidebar-brand">
-      DevConf 2026
-      <span class="sidebar-sub">Mumbai · 2026</span>
-    </div>
+  <!-- Mobile Top Bar (VISIBLE ONLY ON MOBILE) -->
+  <div class="mobile-topbar">
+    <button class="mobile-menu-btn">☰</button>
+    <span class="mobile-title">DevConf 2026</span>
+  </div>
 
-    <nav class="sidebar-nav">
-      <a class="active" href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="speakers.html">Speakers</a>
-      <a href="schedule.html">Schedule</a>
-      <a href="sponsors.html">Sponsors</a>
-      <a href="contact.html">Contact</a>
-      <a href="faq.html">FAQ</a>
+  <!-- Sidebar (Desktop + Mobile Drawer) -->
+  <aside class="sidebar sidebar-slim">
 
-      <a href="register.html" class="sidebar-cta">Register</a>
-    </nav>
-  </aside>
+  <!-- Mobile Close Button -->
+  <button class="sidebar-close-btn">✕</button>
 
-  <!-- Main Content -->
+  <!-- Brand -->
+  <div class="sidebar-brand">
+    <strong>DevConf</strong>
+    <span class="sidebar-sub">2026</span>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="sidebar-nav">
+    <a class="active" href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="speakers.html">Speakers</a>
+    <a href="schedule.html">Schedule</a>
+    <a href="sponsors.html">Sponsors</a>
+    <a href="contact.html">Contact</a>
+    <a href="faq.html">FAQ</a>
+  </nav><br>
+
+  <!-- CTA -->
+  <a href="register.html" class="sidebar-cta">Register</a>
+</aside>
+
+
+  <!-- Overlay (Mobile Only) -->
+  <div class="sidebar-overlay"></div>
+
+  <!-- Main Content Area -->
   <div class="content-area">
 
-    <!-- Page Header -->
-    <header class="page-title">
-      <h1>DevConf 2026</h1>
-      <p>March 15–16, 2026 · Mumbai, India</p>
-    </header>
+    <!-- Hero Header -->
+    <header class="hero-header">
+      <div class="hero-text">
+        <h1>DevConf 2026</h1>
+        <p class="hero-tagline">Where Developers Meet Innovation</p>
+        <p class="hero-meta">March 15–16, 2026 · Mumbai, India</p>
 
-    <main class="content">
+        <a href="register.html" class="cta-button">Register Now</a>
+      </div>
 
-      <!-- Video -->
-      <section class="hero-media">
+      <div class="hero-video">
         <video autoplay muted loop playsinline>
           <source src="../assets/videos/promo.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-      </section>
+      </div>
+    </header>
+
+    <!-- Page Content -->
+    <main class="content">
 
       <!-- About -->
       <section class="home-about">
@@ -67,28 +89,29 @@
           <span class="stat-number">1200+</span>
           <span class="stat-label">Attendees</span>
         </div>
+
         <div class="stat-card">
           <span class="stat-number">40+</span>
           <span class="stat-label">Speakers</span>
         </div>
+
         <div class="stat-card">
           <span class="stat-number">60+</span>
           <span class="stat-label">Sessions</span>
         </div>
       </section>
 
-      <!-- CTA -->
-      <section class="home-cta">
-        <a href="register.html" class="cta-button">Register Now</a>
-      </section>
-
     </main>
 
+    <!-- Footer -->
     <footer class="site-footer">
       <p>© 2026 DevConf</p>
     </footer>
 
   </div>
+
+  <!-- JS -->
+  <script src="../assets/js/ui.js"></script>
 
 </body>
 </html>

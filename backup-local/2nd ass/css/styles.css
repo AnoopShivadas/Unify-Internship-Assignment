@@ -1236,3 +1236,376 @@ a {
     flex-direction: column;
   }
 }
+/* =====================================================
+   DAY 5 – POLISH, ANIMATION & RESPONSIVE
+===================================================== */
+
+/* ---------------------
+   GLOBAL TRANSITIONS
+--------------------- */
+a, button, .stat-card, .speaker-card {
+  transition: all 0.3s ease;
+}
+
+/* ---------------------
+   HERO ENTRANCE ANIMATION
+--------------------- */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-title h1,
+.page-title p {
+  animation: fadeSlideUp 0.8s ease forwards;
+}
+
+/* ---------------------
+   CARD HOVER EFFECTS
+--------------------- */
+.stat-card:hover,
+.speaker-card:hover,
+.sponsor-card:hover {
+  transform: translateY(-6px) scale(1.02);
+}
+
+/* ---------------------
+   DECORATIVE UNDERLINE
+--------------------- */
+.page-title h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #2563eb;
+  margin-top: 0.5rem;
+  border-radius: 2px;
+}
+
+/* ---------------------
+   GLASSMORPHISM SIDEBAR
+--------------------- */
+.sidebar {
+  backdrop-filter: blur(12px);
+  background: rgba(2, 6, 23, 0.95);
+}
+
+/* ---------------------
+   SIDEBAR TOGGLE (MOBILE)
+--------------------- */
+.sidebar-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+/* ---------------------
+   RESPONSIVE BREAKPOINTS
+--------------------- */
+
+/* Mobile */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+
+  .sidebar-toggle {
+    display: block;
+  }
+
+  .content {
+    padding: 1.5rem;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .content {
+    padding: 2rem;
+  }
+
+  .hero-media video {
+    max-width: 360px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .content {
+    padding: 2.5rem;
+  }
+}
+
+/* ---------------------
+   RESPONSIVE FONT SIZES
+--------------------- */
+:root {
+  --fs-title: clamp(1.6rem, 3vw, 2rem);
+}
+
+.page-title h1 {
+  font-size: var(--fs-title);
+}
+/* =====================================================
+   INDEX – BALANCED SIDEBAR + HERO LAYOUT
+===================================================== */
+
+/* Slim sidebar */
+.sidebar-slim {
+  width: 200px;
+  padding: 1.8rem 1.2rem;
+}
+
+.sidebar-brand {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.sidebar-sub {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.sidebar-nav a {
+  font-size: 0.9rem;
+  padding: 0.3rem 0;
+}
+
+.sidebar-cta {
+  margin-top: auto;
+  background: #2563eb;
+  color: #fff;
+  text-align: center;
+  padding: 0.6rem;
+  border-radius: 999px;
+}
+
+/* Hero Header */
+.hero-header {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+  padding: 3rem 3rem 2rem;
+  align-items: center;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.hero-text h1 {
+  font-size: 2.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.hero-tagline {
+  font-size: 1.2rem;
+  color: #2563eb;
+  margin-bottom: 0.6rem;
+}
+
+.hero-meta {
+  color: #64748b;
+  margin-bottom: 1.4rem;
+}
+
+.hero-video video {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+/* Reduce overall height */
+.content {
+  padding-top: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero-header {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+
+  .sidebar-slim {
+    width: 100%;
+    position: relative;
+  }
+
+  .content-area {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+/* =====================================================
+   MOBILE SIDEBAR DRAWER (DAY 5 FIX)
+===================================================== */
+
+/* Hide button on desktop */
+.mobile-menu-btn {
+  display: none;
+}
+
+/* Overlay */
+.sidebar-overlay {
+  display: none;
+}
+
+/* MOBILE ONLY */
+@media (max-width: 768px) {
+
+  /* Sidebar becomes drawer */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 3000;
+  }
+
+  .sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+
+  /* Overlay */
+  .sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 2500;
+  }
+
+  .overlay-show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Menu button */
+  .mobile-menu-btn {
+    display: block;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+
+  /* Content full width */
+  .content-area {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  /* Reduce hero spacing */
+  .hero-header {
+    padding: 1.8rem 1.5rem;
+  }
+
+  .hero-text h1 {
+    font-size: 1.9rem;
+  }
+
+  .hero-video video {
+    max-width: 100%;
+  }
+}
+/* =====================================================
+   MOBILE TOP BAR (SIDEBAR TRIGGER)
+===================================================== */
+
+.mobile-topbar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  .mobile-topbar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.2rem;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+  }
+
+  .mobile-title {
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    color: #0f172a;
+  }
+
+  .mobile-menu-btn {
+    background: none;
+    color: #1e40af;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+  }
+
+  /* Push content down */
+  .content-area {
+    padding-top: 0;
+  }
+}
+/* =====================================================
+   MOBILE DRAWER – HALF WIDTH + CLOSE UX
+===================================================== */
+
+@media (max-width: 768px) {
+
+  /* Sidebar as partial drawer */
+  .sidebar {
+    width: 72%;
+    max-width: 280px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+
+  /* Overlay covers remaining space */
+  .sidebar-overlay {
+    background: rgba(0, 0, 0, 0.45);
+  }
+
+  /* Close button */
+  .sidebar-close-btn {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.3rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+  }
+
+  /* Ensure nav spacing */
+  .sidebar-nav {
+    margin-top: 3rem;
+  }
+}
