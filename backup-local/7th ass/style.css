@@ -1,0 +1,204 @@
+/* ================= THEME ================= */
+:root {
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --muted-bg: #f1f5f9;
+  --text: #0f172a;
+  --muted: #64748b;
+  --accent: #6366f1;
+  --accent-glow: rgba(99,102,241,0.5);
+  --radius: 14px;
+  --max-width: 1100px;
+}
+
+#dark-toggle:checked ~ * {
+  --bg: #020617;
+  --surface: #020617;
+  --muted-bg: #020617;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+}
+
+#accent-toggle:checked ~ * {
+  --accent: #22d3ee;
+  --accent-glow: rgba(34,211,238,0.5);
+}
+
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ================= LAYOUT ================= */
+.container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.section-muted {
+  background: var(--muted-bg);
+}
+
+.section-header {
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+}
+
+.section-header p {
+  color: var(--muted);
+  margin-top: 0.4rem;
+}
+
+/* ================= NAV ================= */
+.navbar {
+  background: var(--surface);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.nav-container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+/* ================= HERO ================= */
+.hero {
+  padding: 6rem 0;
+}
+
+.hero-grid {
+  max-width: 700px;
+}
+
+.lead {
+  margin-top: 1rem;
+  color: var(--muted);
+}
+
+.hero-actions {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+/* ================= BUTTONS ================= */
+.btn {
+  padding: 0.9rem 1.8rem;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: var(--accent);
+  color: white;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.2rem;
+}
+
+.neon {
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.outline {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+}
+
+.rotate {
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  border: 2px solid var(--accent);
+}
+
+.rotate::before {
+  content: "";
+  position: absolute;
+  inset: -100%;
+  background: conic-gradient(var(--accent), transparent);
+  animation: spin 2s linear infinite;
+}
+
+.rotate span {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ================= CARDS ================= */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--surface);
+  padding: 2rem;
+  border-radius: var(--radius);
+}
+
+/* ================= SCROLL EFFECT ================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: reveal linear forwards;
+  animation-timeline: view();
+  animation-range: entry 20% cover 40%;
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  padding: 2rem 0;
+  color: var(--muted);
+  text-align: center;
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Unified Component Library | Day 7</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Scroll Progress -->
+<div class="scroll-progress"></div>
+
+<!-- Theme Toggles -->
+<input type="checkbox" id="dark-toggle" hidden>
+<input type="checkbox" id="accent-toggle" hidden>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo">Unify<span>UI</span></div>
+
+    <nav class="nav-menu">
+      <a href="#hero">Home</a>
+      <a href="#buttons">Buttons</a>
+      <a href="#cards">Cards</a>
+      <a href="#themes">Themes</a>
+    </nav>
+
+    <div class="nav-actions">
+      <label for="accent-toggle" class="chip">Accent</label>
+      <label for="dark-toggle" class="chip">Theme</label>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section id="hero" class="hero">
+  <div class="container hero-grid reveal">
+    <div>
+      <h1 class="scroll-gradient">Unified Component Library</h1>
+      <p class="lead">
+        A clean, scalable CSS-only UI system with modern layout,
+        animations, and theme architecture.
+      </p>
+
+      <div class="hero-actions">
+        <button class="btn neon">Explore Components</button>
+        <button class="btn outline">Documentation</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BUTTONS ================= -->
+<section id="buttons" class="section">
+  <div class="container reveal">
+    <header class="section-header">
+      <h2>Animated Buttons</h2>
+      <p>High-quality micro-interactions using pure CSS</p>
+    </header>
+
+    <div class="button-grid">
+      <button class="btn neon">Neon Glow</button>
+      <button class="btn rotate"><span>Rotating Border</span></button>
+      <button class="btn magnetic"><span>Magnetic</span></button>
+      <button class="btn ripple"><span>Ripple</span></button>
+      <button class="btn lift"><span>Lift</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CARDS ================= -->
+<section id="cards" class="section section-muted">
+  <div class="container reveal">
+    <header class="section-header">
+      <h2>Reusable Components</h2>
+      <p>Structured layouts with scalable styling</p>
+    </header>
+
+    <div class="card-grid">
+      <article class="card">
+        <h3>Layout System</h3>
+        <p>Grid-based layouts with consistent spacing and rhythm.</p>
+      </article>
+
+      <article class="card">
+        <h3>Theme Engine</h3>
+        <p>Global theming using CSS variables and toggles.</p>
+      </article>
+
+      <article class="card">
+        <h3>Motion Design</h3>
+        <p>Subtle animations triggered by scroll position.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= THEMES ================= -->
+<section id="themes" class="section">
+  <div class="container reveal">
+    <header class="section-header">
+      <h2>Theme Architecture</h2>
+      <p>Dark mode & accent switching without JavaScript</p>
+    </header>
+
+    <div class="theme-preview">
+      <div class="theme-box">Background</div>
+      <div class="theme-box">Surface</div>
+      <div class="theme-box accent">Accent</div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>Day 7 · Unified Component Library · UnifyLabs</p>
+  </div>
+</footer>
+
+</body>
+</html>
