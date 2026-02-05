@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anoop Shivadas · Portfolio</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/main.js"></script>
+</head>
+
+<body>
+
+  <!-- Accessibility -->
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav container">
+      <h1 class="logo">Anoop</h1>
+
+      <button class="nav-toggle" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-menu">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li>
+          <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">
+            🌙
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main id="main">
+
+    <!-- About / Hero -->
+    <section id="about" class="section hero">
+      <div class="container hero-grid">
+        <img src="assets/photo.jpg" alt="Anoop Shivadas" class="profile-img">
+
+        <div class="hero-text">
+          <h2>Hello, I’m <span>Anoop Shivadas</span></h2>
+          <p>
+            B.Sc. IT student focused on Web Development and Cybersecurity.
+            I build clean, accessible, and performance-focused web interfaces.
+          </p>
+
+          <a href="#projects" class="btn primary-btn">View My Work</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+
+        <div class="skills-grid">
+          <article class="skill-card">HTML5</article>
+          <article class="skill-card">CSS3</article>
+          <article class="skill-card">JavaScript</article>
+          <article class="skill-card">Python</article>
+          <article class="skill-card">C#</article>
+          <article class="skill-card">Git & GitHub</article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section alt-bg">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+
+        <div class="projects-grid">
+
+          <figure class="project-card">
+            <div class="project-icon">🧭</div>
+            <figcaption>
+              <h3>Responsive Navigation</h3>
+              <p>
+                Mobile-first sticky navigation system with animated hamburger menu
+                and smooth scroll behavior.
+              </p>
+              <ul class="project-points">
+                <li>CSS Grid & Flexbox</li>
+                <li>Keyboard accessible</li>
+                <li>Smooth transitions</li>
+              </ul>
+            </figcaption>
+          </figure>
+
+          <figure class="project-card">
+            <div class="project-icon">🌙</div>
+            <figcaption>
+              <h3>Dark Mode System</h3>
+              <p>
+                Theme switching using CSS variables and JavaScript with
+                persistent user preference.
+              </p>
+              <ul class="project-points">
+                <li>CSS custom properties</li>
+                <li>LocalStorage support</li>
+                <li>Accessible contrast</li>
+              </ul>
+            </figcaption>
+          </figure>
+
+          <figure class="project-card">
+            <div class="project-icon">✨</div>
+            <figcaption>
+              <h3>Animated Components</h3>
+              <p>
+                UI components enhanced with micro-interactions and
+                scroll-based reveal animations.
+              </p>
+              <ul class="project-points">
+                <li>Intersection Observer</li>
+                <li>Smooth easing curves</li>
+                <li>Performance friendly</li>
+              </ul>
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-title" style="text-align:center;">Contact</h2>
+
+        <form class="contact-form">
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Your Email" required>
+          <textarea placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn outline-btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2026 Anoop Shivadas. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
