@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anoop Shivadas · Portfolio</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/main.js"></script>
+</head>
+
+<body>
+
+  <!-- Accessibility -->
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav container">
+      <h1 class="logo">Anoop</h1>
+
+      <button class="nav-toggle" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-menu">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#dashboard" class="nav-link">Dashboard</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li>
+          <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">
+            🌙
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main id="main">
+
+    <!-- About / Hero -->
+    <section id="about" class="section hero">
+      <div class="container hero-grid">
+        <img src="assets/photo.jpg" alt="Anoop Shivadas" class="profile-img">
+
+        <div class="hero-text">
+          <h2>Hello, I’m <span>Anoop Shivadas</span></h2>
+          <p>
+            B.Sc. IT student focused on Web Development and Cybersecurity.
+            I build clean, accessible, and performance-focused web interfaces.
+          </p>
+
+          <a href="#projects" class="btn primary-btn">View My Work</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+
+        <div class="skills-grid">
+          <article class="skill-card">HTML5</article>
+          <article class="skill-card">CSS3</article>
+          <article class="skill-card">JavaScript</article>
+          <article class="skill-card">Python</article>
+          <article class="skill-card">C#</article>
+          <article class="skill-card">Git & GitHub</article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section alt-bg">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+
+        <div class="projects-grid">
+
+          <figure class="project-card">
+            <div class="project-icon">🧭</div>
+            <figcaption>
+              <h3>Responsive Navigation</h3>
+              <p>
+                Mobile-first sticky navigation system with animated hamburger menu
+                and smooth scroll behavior.
+              </p>
+            </figcaption>
+          </figure>
+
+          <figure class="project-card">
+            <div class="project-icon">🌙</div>
+            <figcaption>
+              <h3>Dark Mode System</h3>
+              <p>
+                Theme switching using CSS variables with persistent preference.
+              </p>
+            </figcaption>
+          </figure>
+
+          <figure class="project-card">
+            <div class="project-icon">✨</div>
+            <figcaption>
+              <h3>Animated Components</h3>
+              <p>
+                UI components enhanced with smooth micro-interactions.
+              </p>
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DAY 9 DASHBOARD ================= -->
+    <section id="dashboard" class="section">
+      <div class="container">
+        <h2 class="section-title">Dashboard · Day 9</h2>
+
+        <div class="dashboard-grid">
+
+          <!-- 3D FLIP CARD -->
+          <div class="card flip-card">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <h3>3D Flip Card</h3>
+                <p>Hover to flip</p>
+              </div>
+              <div class="flip-back">
+                <p>CSS 3D Transform</p>
+                <div class="progress">
+                  <span style="width: 85%"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- GLASS CARD -->
+          <div class="card glass-card">
+            <img src="https://images.unsplash.com/featured/?technology" alt="">
+            <h3>Glassmorphism</h3>
+            <p>Blur + transparency</p>
+
+            <div class="progress">
+              <span style="width: 65%"></span>
+            </div>
+          </div>
+
+          <!-- ANIMATED BORDER CARD -->
+          <div class="card border-card">
+            <h3>Animated Border</h3>
+            <p>Gradient motion</p>
+
+            <div class="progress">
+              <span style="width: 90%"></span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq">
+      <div class="container">
+        <h2 class="section-title">FAQ</h2>
+
+        <div class="faq-item">
+          <input type="checkbox" id="faq1">
+          <label for="faq1">What is CSS Grid?</label>
+          <div class="answer">
+            CSS Grid is a powerful layout system for building responsive designs.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <input type="checkbox" id="faq2">
+          <label for="faq2">What is Glassmorphism?</label>
+          <div class="answer">
+            A modern UI trend using blur, transparency, and soft borders.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <input type="checkbox" id="faq3">
+          <label for="faq3">Is JavaScript required?</label>
+          <div class="answer">
+            No. The accordion and cards are built using pure CSS.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-title" style="text-align:center;">Contact</h2>
+
+        <form class="contact-form">
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Your Email" required>
+          <textarea placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn outline-btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2026 Anoop Shivadas. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
