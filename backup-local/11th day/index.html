@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - Something Worth The Wait</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Multi-layer Background -->
+    <div class="background-layers">
+        <!-- Particle Layer -->
+        <canvas id="particleCanvas" class="particle-layer"></canvas>
+
+        <!-- Gradient Glow Layer -->
+        <div class="gradient-glow-layer"></div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1 class="hero-title">
+                <span class="neon-text">COMING SOON</span>
+            </h1>
+
+            <p class="typewriter-text">
+                <span id="typewriterContent"></span>
+                <span class="cursor" id="cursor">|</span>
+            </p>
+
+            <button class="cta-button" id="notifyBtn">
+                <span>Notify Me</span>
+            </button>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery-section">
+            <h2 class="section-title">What We're Building</h2>
+
+            <div class="masonry-grid">
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&q=80" alt="Modern workspace with code">
+                </div>
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80" alt="Abstract technology">
+                </div>
+                <div class="gallery-card tall">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80" alt="Digital globe">
+                </div>
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80" alt="Technology abstract">
+                </div>
+                <div class="gallery-card tall">
+                    <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&q=80" alt="Futuristic interface">
+                </div>
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&q=80" alt="Circuit board">
+                </div>
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&q=80" alt="Data visualization">
+                </div>
+                <div class="gallery-card tall">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80" alt="Code on screen">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-container">
+            <button class="modal-close" id="modalClose">&times;</button>
+
+            <div class="modal-content">
+                <h2 class="modal-title">Get Early Access</h2>
+                <p class="modal-description">
+                    Be the first to know when we launch. Join our exclusive waitlist.
+                </p>
+
+                <form class="modal-form" id="notifyForm">
+                    <input
+                        type="email"
+                        class="modal-input"
+                        placeholder="Enter your email"
+                        required
+                        id="emailInput"
+                    >
+                    <button type="submit" class="modal-submit">
+                        <span>Join Waitlist</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
