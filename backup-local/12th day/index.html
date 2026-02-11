@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevConf 2026 - Performance Optimized</title>
+  <meta name="description" content="DevConf 2026 - A fully optimized and accessible tech conference website.">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="header" id="header">
+  <nav class="navbar container" aria-label="Main navigation">
+    <a href="index.html" class="logo">DevConf 2026</a>
+
+    <button class="nav-toggle"
+      aria-label="Toggle navigation"
+      aria-expanded="false"
+      aria-controls="nav-menu">
+      ☰
+    </button>
+
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#speakers" class="nav-link">Speakers</a></li>
+      <li><a href="#schedule" class="nav-link">Schedule</a></li>
+      <li><a href="audit-report.html" class="nav-link">Audit Report</a></li>
+      <li><a href="#register" class="btn btn-primary">Register</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1503428593586-e225b39bddfe"
+         alt="Large tech conference audience attending DevConf">
+  </div>
+
+  <div class="hero-content container">
+    <h1 class="hero-title">DevConf 2026</h1>
+    <p class="hero-subtitle">
+      The Future of Web Performance & Accessibility
+    </p>
+
+    <div class="hero-cta">
+      <a href="#register" class="btn btn-primary">Get Tickets</a>
+      <a href="#schedule" class="btn btn-secondary">View Schedule</a>
+    </div>
+  </div>
+</section>
+
+<!-- SPEAKERS -->
+<section class="section" id="speakers">
+  <div class="container">
+    <h2 class="section-title">Featured Speakers</h2>
+
+    <div class="speakers-grid">
+      <article class="speaker-card card">
+        <div class="speaker-image">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330"
+               alt="Sarah Chen, Web Performance Engineer">
+        </div>
+        <h3>Sarah Chen</h3>
+        <p class="speaker-role">Web Performance Engineer</p>
+      </article>
+
+      <article class="speaker-card card">
+        <div class="speaker-image">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
+               alt="David Kumar, Accessibility Specialist">
+        </div>
+        <h3>David Kumar</h3>
+        <p class="speaker-role">Accessibility Specialist</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="section" id="schedule">
+  <div class="container">
+    <h2 class="section-title">Conference Schedule</h2>
+
+    <div class="schedule-item">
+      <div class="schedule-time">09:00 AM</div>
+      <div class="schedule-details">
+        <h3>Opening Keynote</h3>
+        <p class="schedule-speaker">Sarah Chen</p>
+        <p class="schedule-description">
+          Optimizing frontend performance for modern applications.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTER -->
+<section class="section cta" id="register">
+  <div class="container cta-content">
+    <h2 class="cta-title">Join DevConf 2026</h2>
+    <p class="cta-description">
+      Experience next-level performance engineering and accessibility best practices.
+    </p>
+    <a href="#" class="btn btn-primary">Register Now</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2026 DevConf. Built with performance & accessibility in mind.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
