@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Number Guessing Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="game-card">
+            <div class="card-header">
+                <h1 class="title">Number Guessing Game</h1>
+                <p class="subtitle">Guess the number between 1 and 100</p>
+            </div>
+
+            <div class="attempts-section">
+                <div class="attempts-info">
+                    <span class="attempts-label">Attempts Remaining</span>
+                    <span class="attempts-count" id="attemptsCount">7</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <div class="input-section">
+                <input
+                    type="number"
+                    id="guessInput"
+                    class="guess-input"
+                    placeholder="Enter your guess"
+                    min="1"
+                    max="100"
+                    autocomplete="off"
+                >
+                <button id="submitBtn" class="btn btn-submit">Submit Guess</button>
+            </div>
+
+            <div class="hint-section">
+                <div class="hint-message" id="hintMessage">
+                    <span class="hint-icon">🎯</span>
+                    <span class="hint-text">Make your first guess!</span>
+                </div>
+            </div>
+
+            <div class="previous-guesses">
+                <h3 class="section-title">Previous Guesses</h3>
+                <div class="guesses-list" id="guessesList">
+                    <span class="empty-state">No guesses yet</span>
+                </div>
+            </div>
+
+            <button id="restartBtn" class="btn btn-restart">Restart Game</button>
+        </div>
+
+        
+    </div>
+
+    <div class="confetti-container" id="confettiContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
