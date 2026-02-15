@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Text Formatter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="title">Smart Text Formatter</h1>
+            <p class="subtitle">Transform your text with intelligent processing</p>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <span class="icon-sun">☀️</span>
+                <span class="icon-moon">🌙</span>
+            </button>
+        </header>
+
+        <!-- Main Card -->
+        <div class="card">
+            <!-- Input Section -->
+            <div class="input-section">
+                <label for="textInput" class="label">Enter Your Text</label>
+                <textarea 
+                    id="textInput" 
+                    class="text-input" 
+                    placeholder="Type or paste your text here..."
+                    maxlength="1000"
+                    rows="6"
+                ></textarea>
+                <div class="char-counter">
+                    <span id="charCount">0</span> / 1000 characters
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="button-group">
+                <button class="btn btn-primary" id="formatBtn">
+                    <span class="btn-icon">✨</span>
+                    Format Text
+                </button>
+                <button class="btn btn-secondary" id="vowelBtn">
+                    <span class="btn-icon">🔤</span>
+                    Count Vowels
+                </button>
+                <button class="btn btn-secondary" id="secretBtn">
+                    <span class="btn-icon">🔒</span>
+                    Generate Secret
+                </button>
+                <button class="btn btn-secondary" id="statsBtn">
+                    <span class="btn-icon">📊</span>
+                    Show Statistics
+                </button>
+                <button class="btn btn-clear" id="clearBtn">
+                    <span class="btn-icon">🗑️</span>
+                    Clear All
+                </button>
+            </div>
+
+            <!-- Output Section -->
+            <div class="output-section" id="outputSection">
+                <div class="output-header">
+                    <h3 class="output-title" id="outputTitle">Result</h3>
+                </div>
+                <div class="output-content" id="outputContent">
+                    <p class="placeholder-text">Your formatted text will appear here...</p>
+                </div>
+            </div>
+
+            <!-- Statistics Panel -->
+            <div class="stats-panel" id="statsPanel">
+                <h3 class="stats-title">Text Statistics</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value" id="totalChars">0</div>
+                        <div class="stat-label">Total Characters</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="totalWords">0</div>
+                        <div class="stat-label">Total Words</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="totalVowels">0</div>
+                        <div class="stat-label">Total Vowels</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="avgWordLength">0</div>
+                        <div class="stat-label">Avg Word Length</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Built with modern ES6 arrow functions & string processing</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
