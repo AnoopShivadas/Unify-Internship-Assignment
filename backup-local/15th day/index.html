@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURORA-X :: QUANTUM GRID OS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="grid-background"></div>
+    
+    <div class="container">
+        <header class="header">
+            <h1 class="title">AURORA-X :: QUANTUM GRID OS</h1>
+            <div class="clock" id="clock">00:00:00</div>
+        </header>
+        
+        <div class="terminal-wrapper">
+            <div class="terminal" id="terminal">
+                <div class="output" id="output"></div>
+                <div class="input-line" id="inputLine">
+                    <span class="prompt" id="prompt">&gt;&gt;</span>
+                    <input type="text" class="input" id="input" autocomplete="off" spellcheck="false" disabled>
+                </div>
+            </div>
+            
+            <div class="loader" id="loader">
+                <div class="loader-ring"></div>
+                <div class="loader-ring"></div>
+                <div class="loader-ring"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
