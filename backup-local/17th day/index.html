@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Master Data Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <meta property="og:image" content="https://bolt.new/static/og_default.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
+</head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="header-content">
+          <h1 class="header-title">
+            <span class="icon">🎯</span>
+            Task Master Data Dashboard
+          </h1>
+          <p class="header-subtitle">Real-time Project Analytics & Insights</p>
+        </div>
+      </header>
+
+      <section class="stats-section">
+        <div class="stat-card completed">
+          <div class="stat-icon">✅</div>
+          <div class="stat-content">
+            <h3 class="stat-label">Completed Tasks</h3>
+            <p class="stat-value" id="completedCount">0</p>
+          </div>
+        </div>
+
+        <div class="stat-card pending">
+          <div class="stat-icon">⏳</div>
+          <div class="stat-content">
+            <h3 class="stat-label">Pending Tasks</h3>
+            <p class="stat-value" id="pendingCount">0</p>
+          </div>
+        </div>
+
+        <div class="stat-card revenue">
+          <div class="stat-icon">💰</div>
+          <div class="stat-content">
+            <h3 class="stat-label">Total Revenue</h3>
+            <p class="stat-value" id="totalRevenue">₹0</p>
+          </div>
+        </div>
+
+        <div class="stat-card expenses">
+          <div class="stat-icon">📊</div>
+          <div class="stat-content">
+            <h3 class="stat-label">Total Expenses</h3>
+            <p class="stat-value" id="totalExpenses">₹0</p>
+          </div>
+        </div>
+
+        <div class="stat-card profit">
+          <div class="stat-icon">📈</div>
+          <div class="stat-content">
+            <h3 class="stat-label">Net Profit</h3>
+            <p class="stat-value" id="netProfit">₹0</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="table-section">
+        <div class="table-header">
+          <h2 class="table-title">Project Overview</h2>
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+            <button class="filter-btn" data-filter="pending">Pending</button>
+          </div>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Student Name</th>
+                <th>Project Title</th>
+                <th>Status</th>
+                <th>Price</th>
+                <th>Price + Tax (18%)</th>
+                <th>Expenses</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>Day 16 – UnifyLabs | Built with 💙 by Task Master</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
