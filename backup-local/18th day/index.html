@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Pet Simulator</title>
+    <meta property="og:image" content="https://bolt.new/static/og_default.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://bolt.new/static/og_default.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="background-gradient"></div>
+
+    <div class="container">
+      <header class="header">
+        <h1 class="title">Digital Pet Simulator</h1>
+        <p class="subtitle">Take care of your virtual companion</p>
+      </header>
+
+      <div class="pet-card">
+        <div class="pet-display">
+          <div class="pet-icon" id="petIcon">🐱</div>
+          <h2 class="pet-name" id="petName">Whiskers</h2>
+          <p class="pet-type" id="petType">Cat</p>
+        </div>
+
+        <div class="status-message" id="statusMessage">
+          Your pet is feeling great!
+        </div>
+
+        <div class="stats-container">
+          <div class="stat-item">
+            <div class="stat-header">
+              <span class="stat-icon">🍖</span>
+              <span class="stat-label">Hunger</span>
+              <span class="stat-value" id="hungerValue">50</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill hunger" id="hungerBar" style="width: 50%"></div>
+            </div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-header">
+              <span class="stat-icon">⚡</span>
+              <span class="stat-label">Energy</span>
+              <span class="stat-value" id="energyValue">50</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill energy" id="energyBar" style="width: 50%"></div>
+            </div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-header">
+              <span class="stat-icon">❤️</span>
+              <span class="stat-label">Health</span>
+              <span class="stat-value" id="healthValue">100</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill health" id="healthBar" style="width: 100%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="actions-container">
+          <button class="action-btn feed-btn" id="feedBtn">
+            <span class="btn-icon">🍕</span>
+            <span class="btn-text">Feed</span>
+          </button>
+          <button class="action-btn play-btn" id="playBtn">
+            <span class="btn-icon">🎾</span>
+            <span class="btn-text">Play</span>
+          </button>
+          <button class="action-btn rest-btn" id="restBtn">
+            <span class="btn-icon">😴</span>
+            <span class="btn-text">Rest</span>
+          </button>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <p>Made with care for your digital companion</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
