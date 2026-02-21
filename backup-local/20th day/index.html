@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora Weather – Premium Intelligence Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="aurora-background">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+        <div class="particles-container">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+    </div>
+
+    <!-- Main Dashboard Container -->
+    <div class="dashboard-container">
+        <!-- Header Section -->
+        <header class="dashboard-header">
+            <div class="logo-section">
+                <div class="logo-glow"></div>
+                <h1 class="brand-title">AURORA<span class="brand-accent">WEATHER</span></h1>
+                <p class="brand-tagline">Real-Time Intelligence</p>
+            </div>
+            
+            <div class="search-section">
+                <div class="search-container">
+                    <input type="text" id="citySearch" class="search-input" placeholder="Search city..." value="San Francisco">
+                    <button class="search-btn" id="searchBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="temp-toggle">
+                    <button class="toggle-btn active" data-unit="C">°C</button>
+                    <button class="toggle-btn" data-unit="F">°F</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Loading Spinner -->
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="loading-spinner">
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+            </div>
+            <p class="loading-text">Loading Weather Data...</p>
+        </div>
+
+        <!-- Main Content Grid -->
+        <main class="content-grid">
+            <!-- Primary Weather Card -->
+            <section class="main-weather-card glass-card" id="mainWeatherCard">
+                <div class="card-header">
+                    <div class="location-info">
+                        <h2 class="city-name" id="cityName">San Francisco</h2>
+                        <p class="location-subtitle" id="locationSubtitle">California, United States</p>
+                    </div>
+                    <div class="timestamp" id="timestamp">Updated 2 min ago</div>
+                </div>
+
+                <div class="weather-display">
+                    <div class="temp-section">
+                        <div class="temp-value" id="tempValue">
+                            <span class="temp-number">72</span>
+                            <span class="temp-unit">°F</span>
+                        </div>
+                        <div class="feels-like">Feels like <span id="feelsLike">68°F</span></div>
+                    </div>
+
+                    <div class="weather-icon-container">
+                        <div class="icon-glow"></div>
+                        <svg class="weather-icon" id="weatherIcon" width="140" height="140" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="5"/>
+                            <line x1="12" y1="1" x2="12" y2="3"/>
+                            <line x1="12" y1="21" x2="12" y2="23"/>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                            <line x1="1" y1="12" x2="3" y2="12"/>
+                            <line x1="21" y1="12" x2="23" y2="12"/>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                        </svg>
+                    </div>
+
+                    <div class="condition-section">
+                        <h3 class="condition-title" id="condition">Sunny</h3>
+                        <p class="condition-description" id="description">Clear skies with light breeze</p>
+                    </div>
+                </div>
+
+                <div class="weather-stats">
+                    <div class="stat-item">
+                        <div class="stat-icon">💧</div>
+                        <div class="stat-content">
+                            <span class="stat-label">Humidity</span>
+                            <span class="stat-value" id="humidity">45%</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">💨</div>
+                        <div class="stat-content">
+                            <span class="stat-label">Wind Speed</span>
+                            <span class="stat-value" id="windSpeed">12 mph</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">🌡️</div>
+                        <div class="stat-content">
+                            <span class="stat-label">Pressure</span>
+                            <span class="stat-value" id="pressure">1013 hPa</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">👁️</div>
+                        <div class="stat-content">
+                            <span class="stat-label">Visibility</span>
+                            <span class="stat-value" id="visibility">10 km</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">🧭</div>
+                        <div class="stat-content">
+                            <span class="stat-label">Wind Direction</span>
+                            <span class="stat-value" id="windDirection">NW</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">💦</div>
+                        <div class="stat-content">
+                            <span class="stat-label">Dew Point</span>
+                            <span class="stat-value" id="dewPoint">54°F</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">🌪️</div>
+                        <div class="stat-content">
+                            <span class="stat-label">Wind Gust</span>
+                            <span class="stat-value" id="windGust">18 mph</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">🌫️</div>
+                        <div class="stat-content">
+                            <span class="stat-label">Air Quality</span>
+                            <span class="stat-value" id="aqiQuick">Good</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hourly Forecast Section -->
+            <section class="hourly-forecast-section glass-card">
+                <div class="section-header">
+                    <h3 class="section-title">Hourly Forecast</h3>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="hourly-scroll" id="hourlyContainer">
+                    <!-- Hourly forecast will be injected by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Forecast Section -->
+            <section class="forecast-section">
+                <div class="section-header">
+                    <h3 class="section-title">7-Day Forecast</h3>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="forecast-scroll" id="forecastContainer">
+                    <!-- Forecast cards will be injected by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Moon Phase & Astronomy -->
+            <section class="astronomy-card glass-card">
+                <h3 class="panel-title">Astronomy</h3>
+                <div class="moon-display">
+                    <div class="moon-phase" id="moonPhase">
+                        <div class="moon-icon">🌓</div>
+                    </div>
+                    <div class="moon-info">
+                        <div class="moon-name" id="moonName">First Quarter</div>
+                        <div class="moon-illumination" id="moonIllumination">52% Illuminated</div>
+                        <div class="moon-times">
+                            <div class="moon-time-item">
+                                <span class="moon-time-label">Moonrise</span>
+                                <span class="moon-time-value" id="moonrise">12:34 PM</span>
+                            </div>
+                            <div class="moon-time-item">
+                                <span class="moon-time-label">Moonset</span>
+                                <span class="moon-time-value" id="moonset">1:23 AM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Weather Alerts & Tips -->
+            <section class="alerts-card glass-card">
+                <h3 class="panel-title">Weather Insights</h3>
+                <div class="insights-container">
+                    <div class="insight-item">
+                        <div class="insight-icon">🌡️</div>
+                        <div class="insight-content">
+                            <div class="insight-title">Temperature Trend</div>
+                            <div class="insight-text">Temperature rising throughout the day</div>
+                        </div>
+                    </div>
+                    <div class="insight-item">
+                        <div class="insight-icon">☀️</div>
+                        <div class="insight-content">
+                            <div class="insight-title">UV Protection</div>
+                            <div class="insight-text">Moderate UV - sunscreen recommended</div>
+                        </div>
+                    </div>
+                    <div class="insight-item">
+                        <div class="insight-icon">💧</div>
+                        <div class="insight-content">
+                            <div class="insight-title">Precipitation</div>
+                            <div class="insight-text">No rain expected in the next 24 hours</div>
+                        </div>
+                    </div>
+                    <div class="insight-item">
+                        <div class="insight-icon">🌬️</div>
+                        <div class="insight-content">
+                            <div class="insight-title">Air Quality</div>
+                            <div class="insight-text">Excellent conditions for outdoor activities</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Additional Metrics Panel -->
+            <section class="metrics-panel glass-card">
+                <h3 class="panel-title">Detailed Metrics</h3>
+                
+                <div class="metric-row">
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-icon">🌅</span>
+                            <span class="metric-label">Sunrise</span>
+                        </div>
+                        <div class="metric-value" id="sunrise">6:24 AM</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-icon">🌇</span>
+                            <span class="metric-label">Sunset</span>
+                        </div>
+                        <div class="metric-value" id="sunset">7:42 PM</div>
+                    </div>
+                </div>
+
+                <div class="metric-row">
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-icon">☁️</span>
+                            <span class="metric-label">Cloud Cover</span>
+                        </div>
+                        <div class="metric-value" id="cloudCover">15%</div>
+                        <div class="metric-bar">
+                            <div class="metric-bar-fill" style="width: 15%"></div>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-icon">☀️</span>
+                            <span class="metric-label">UV Index</span>
+                        </div>
+                        <div class="metric-value" id="uvIndex">6</div>
+                        <div class="metric-bar">
+                            <div class="metric-bar-fill uv-moderate" style="width: 60%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metric-full">
+                    <div class="metric-header">
+                        <span class="metric-icon">🌧️</span>
+                        <span class="metric-label">Precipitation Chance</span>
+                    </div>
+                    <div class="metric-value" id="precipitation">5%</div>
+                    <div class="precipitation-chart">
+                        <div class="chart-bar" style="height: 10%"></div>
+                        <div class="chart-bar" style="height: 5%"></div>
+                        <div class="chart-bar" style="height: 15%"></div>
+                        <div class="chart-bar" style="height: 8%"></div>
+                        <div class="chart-bar" style="height: 3%"></div>
+                        <div class="chart-bar" style="height: 12%"></div>
+                    </div>
+                </div>
+
+                <div class="metric-row">
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-icon">🌡️</span>
+                            <span class="metric-label">Heat Index</span>
+                        </div>
+                        <div class="metric-value" id="heatIndex">74°F</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-icon">🌨️</span>
+                            <span class="metric-label">Wind Chill</span>
+                        </div>
+                        <div class="metric-value" id="windChill">70°F</div>
+                    </div>
+                </div>
+
+                <div class="metric-full">
+                    <div class="metric-header">
+                        <span class="metric-icon">📊</span>
+                        <span class="metric-label">Pressure Trend (24h)</span>
+                    </div>
+                    <div class="pressure-graph">
+                        <svg width="100%" height="80" viewBox="0 0 300 80">
+                            <defs>
+                                <linearGradient id="pressureGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:#00f5ff;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#0066ff;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <polyline
+                                points="0,60 50,50 100,45 150,40 200,42 250,38 300,35"
+                                fill="none"
+                                stroke="url(#pressureGradient)"
+                                stroke-width="3"
+                                stroke-linecap="round"
+                            />
+                            <circle cx="0" cy="60" r="4" fill="#00f5ff"/>
+                            <circle cx="50" cy="50" r="4" fill="#00f5ff"/>
+                            <circle cx="100" cy="45" r="4" fill="#00f5ff"/>
+                            <circle cx="150" cy="40" r="4" fill="#00f5ff"/>
+                            <circle cx="200" cy="42" r="4" fill="#00f5ff"/>
+                            <circle cx="250" cy="38" r="4" fill="#00f5ff"/>
+                            <circle cx="300" cy="35" r="4" fill="#0066ff"/>
+                        </svg>
+                    </div>
+                    <div class="trend-label">
+                        <span style="color: #00f5ff;">↗</span> Rising
+                    </div>
+                </div>
+            </section>
+
+            <!-- Air Quality Card -->
+            <section class="air-quality-card glass-card">
+                <h3 class="panel-title">Air Quality</h3>
+                <div class="aqi-display">
+                    <div class="aqi-circle">
+                        <svg width="120" height="120" viewBox="0 0 120 120">
+                            <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="8"/>
+                            <circle cx="60" cy="60" r="50" fill="none" stroke="url(#aqiGradient)" stroke-width="8" 
+                                    stroke-dasharray="314" stroke-dashoffset="94" transform="rotate(-90 60 60)"/>
+                            <defs>
+                                <linearGradient id="aqiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#00f5ff;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#0066ff;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div class="aqi-value" id="aqiValue">42</div>
+                    </div>
+                    <div class="aqi-info">
+                        <div class="aqi-label">Good</div>
+                        <p class="aqi-description">Air quality is satisfactory</p>
+                    </div>
+                </div>
+                <div class="aqi-pollutants">
+                    <div class="pollutant-item">
+                        <span class="pollutant-name">PM2.5</span>
+                        <span class="pollutant-value">12 µg/m³</span>
+                    </div>
+                    <div class="pollutant-item">
+                        <span class="pollutant-name">PM10</span>
+                        <span class="pollutant-value">18 µg/m³</span>
+                    </div>
+                    <div class="pollutant-item">
+                        <span class="pollutant-name">O₃</span>
+                        <span class="pollutant-value">45 µg/m³</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Temperature Graph -->
+            <section class="temp-graph-card glass-card">
+                <h3 class="panel-title">24-Hour Temperature</h3>
+                <div class="temp-graph-container">
+                    <svg width="100%" height="150" viewBox="0 0 400 150">
+                        <defs>
+                            <linearGradient id="tempGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:0.6" />
+                                <stop offset="100%" style="stop-color:#4ecdc4;stop-opacity:0.6" />
+                            </linearGradient>
+                            <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#00f5ff;stop-opacity:1" />
+                                <stop offset="50%" style="stop-color:#ff6b6b;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#0066ff;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        
+                        <!-- Area fill -->
+                        <path
+                            d="M 0,120 L 0,80 L 50,70 L 100,60 L 150,50 L 200,45 L 250,50 L 300,55 L 350,65 L 400,75 L 400,120 Z"
+                            fill="url(#tempGradient)"
+                            opacity="0.3"
+                        />
+                        
+                        <!-- Temperature line -->
+                        <polyline
+                            points="0,80 50,70 100,60 150,50 200,45 250,50 300,55 350,65 400,75"
+                            fill="none"
+                            stroke="url(#lineGradient)"
+                            stroke-width="3"
+                            stroke-linecap="round"
+                        />
+                        
+                        <!-- Data points -->
+                        <circle cx="0" cy="80" r="5" fill="#00f5ff"/>
+                        <circle cx="50" cy="70" r="5" fill="#00f5ff"/>
+                        <circle cx="100" cy="60" r="5" fill="#00f5ff"/>
+                        <circle cx="150" cy="50" r="5" fill="#ff6b6b"/>
+                        <circle cx="200" cy="45" r="5" fill="#ff6b6b"/>
+                        <circle cx="250" cy="50" r="5" fill="#0066ff"/>
+                        <circle cx="300" cy="55" r="5" fill="#0066ff"/>
+                        <circle cx="350" cy="65" r="5" fill="#0066ff"/>
+                        <circle cx="400" cy="75" r="5" fill="#0066ff"/>
+                        
+                        <!-- Labels -->
+                        <text x="0" y="140" fill="rgba(255,255,255,0.6)" font-size="10" text-anchor="middle">12A</text>
+                        <text x="100" y="140" fill="rgba(255,255,255,0.6)" font-size="10" text-anchor="middle">6A</text>
+                        <text x="200" y="140" fill="rgba(255,255,255,0.6)" font-size="10" text-anchor="middle">12P</text>
+                        <text x="300" y="140" fill="rgba(255,255,255,0.6)" font-size="10" text-anchor="middle">6P</text>
+                        <text x="400" y="140" fill="rgba(255,255,255,0.6)" font-size="10" text-anchor="middle">12A</text>
+                    </svg>
+                </div>
+                <div class="temp-range">
+                    <span class="temp-min">
+                        <span class="range-label">Low:</span>
+                        <span class="range-value" id="tempMin">65°F</span>
+                    </span>
+                    <span class="temp-max">
+                        <span class="range-label">High:</span>
+                        <span class="range-value" id="tempMax">78°F</span>
+                    </span>
+                </div>
+            </section>
+
+            <!-- Pollen & Allergens -->
+            <section class="pollen-card glass-card">
+                <h3 class="panel-title">Pollen & Allergens</h3>
+                <div class="pollen-items">
+                    <div class="pollen-item">
+                        <div class="pollen-header">
+                            <span class="pollen-icon">🌾</span>
+                            <span class="pollen-name">Grass</span>
+                        </div>
+                        <div class="pollen-level low">Low</div>
+                        <div class="pollen-bar">
+                            <div class="pollen-bar-fill" style="width: 25%"></div>
+                        </div>
+                    </div>
+                    <div class="pollen-item">
+                        <div class="pollen-header">
+                            <span class="pollen-icon">🌳</span>
+                            <span class="pollen-name">Tree</span>
+                        </div>
+                        <div class="pollen-level moderate">Moderate</div>
+                        <div class="pollen-bar">
+                            <div class="pollen-bar-fill moderate" style="width: 55%"></div>
+                        </div>
+                    </div>
+                    <div class="pollen-item">
+                        <div class="pollen-header">
+                            <span class="pollen-icon">🌼</span>
+                            <span class="pollen-name">Weed</span>
+                        </div>
+                        <div class="pollen-level low">Low</div>
+                        <div class="pollen-bar">
+                            <div class="pollen-bar-fill" style="width: 30%"></div>
+                        </div>
+                    </div>
+                    <div class="pollen-item">
+                        <div class="pollen-header">
+                            <span class="pollen-icon">🍄</span>
+                            <span class="pollen-name">Mold</span>
+                        </div>
+                        <div class="pollen-level low">Low</div>
+                        <div class="pollen-bar">
+                            <div class="pollen-bar-fill" style="width: 20%"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
