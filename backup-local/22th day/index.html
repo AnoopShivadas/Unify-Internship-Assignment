@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Nexus — Real-Time Data & Analytics Hub</title>
+  <meta name="description" content="Premium real-time crypto and financial analytics dashboard built with modular ES6 architecture." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     APP SHELL
+═══════════════════════════════════════════════ -->
+<div class="app-layout">
+
+  <!-- ── SIDEBAR ─────────────────────────────── -->
+  <aside class="sidebar" role="navigation" aria-label="Main navigation">
+
+    <!-- Brand -->
+    <div class="brand">
+      <div class="brand-logo" aria-hidden="true">🌐</div>
+      <div class="brand-name">
+        <span class="brand-title">NEXUS</span>
+        <span class="brand-subtitle">Analytics Hub</span>
+      </div>
+      <button class="sidebar-collapse-btn" id="sidebar-toggle" aria-label="Toggle sidebar">⟨</button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sidebar-nav">
+      <div class="sidebar-section-title">Main</div>
+
+      <button class="nav-item active" data-view="dashboard" aria-current="page">
+        <span class="nav-icon">⚡</span>
+        <span class="sidebar-label">Dashboard</span>
+      </button>
+
+      <button class="nav-item" data-view="favorites">
+        <span class="nav-icon">♥</span>
+        <span class="sidebar-label">Favorites</span>
+        <span class="nav-badge" id="fav-count">0</span>
+      </button>
+
+      <div class="sidebar-section-title">Analytics</div>
+
+      <button class="nav-item" data-view="dashboard">
+        <span class="nav-icon">📈</span>
+        <span class="sidebar-label">Market Trends</span>
+      </button>
+
+      <button class="nav-item" data-view="dashboard">
+        <span class="nav-icon">🔄</span>
+        <span class="sidebar-label">Trade Flow</span>
+      </button>
+
+      <button class="nav-item" data-view="dashboard">
+        <span class="nav-icon">🎯</span>
+        <span class="sidebar-label">Signals</span>
+      </button>
+
+      <div class="sidebar-section-title">Manage</div>
+
+      <button class="nav-item" data-view="dashboard">
+        <span class="nav-icon">💼</span>
+        <span class="sidebar-label">Portfolio</span>
+      </button>
+
+      <button class="nav-item" data-view="dashboard">
+        <span class="nav-icon">🔔</span>
+        <span class="sidebar-label">Alerts</span>
+      </button>
+
+      <button class="nav-item" data-view="dashboard">
+        <span class="nav-icon">⚙</span>
+        <span class="sidebar-label">Settings</span>
+      </button>
+    </nav>
+
+    <!-- Market Indicator -->
+    <div class="sidebar-bottom">
+      <div class="market-indicator">
+        <div class="mi-row">
+          <span class="mi-label">BTC Dominance</span>
+          <span class="mi-val" id="btc-dom">47.3%</span>
+        </div>
+        <div class="mi-row">
+          <span class="mi-label">Fear &amp; Greed</span>
+          <span class="mi-val"><span id="fear-greed">72</span> — <span id="fg-label">Greed</span></span>
+        </div>
+        <div class="fg-bar"><div class="fg-fill"></div></div>
+      </div>
+    </div>
+
+  </aside>
+
+
+  <!-- ── TICKER BAR ───────────────────────────── -->
+  <div class="ticker-bar" role="marquee" aria-label="Live market ticker">
+    <div class="ticker-scroll">
+      <div class="ticker-inner" id="ticker-inner">
+        <!-- Populated by JS, duplicated for seamless scroll -->
+        <span class="ticker-item"><span class="ticker-sym">BTC</span><span class="ticker-price">$67,420</span><span class="ticker-change up">▲3.42%</span></span>
+        <span class="ticker-item"><span class="ticker-sym">ETH</span><span class="ticker-price">$3,891</span><span class="ticker-change up">▲1.87%</span></span>
+        <span class="ticker-item"><span class="ticker-sym">SOL</span><span class="ticker-price">$189.44</span><span class="ticker-change up">▲5.61%</span></span>
+        <span class="ticker-item"><span class="ticker-sym">BNB</span><span class="ticker-price">$412.80</span><span class="ticker-change down">▼0.93%</span></span>
+        <span class="ticker-item"><span class="ticker-sym">XRP</span><span class="ticker-price">$0.6241</span><span class="ticker-change up">▲2.15%</span></span>
+        <span class="ticker-item"><span class="ticker-sym">ADA</span><span class="ticker-price">$0.5873</span><span class="ticker-change down">▼1.44%</span></span>
+        <span class="ticker-item"><span class="ticker-sym">AVAX</span><span class="ticker-price">$42.67</span><span class="ticker-change up">▲7.22%</span></span>
+        <span class="ticker-item"><span class="ticker-sym">DOGE</span><span class="ticker-price">$0.1841</span><span class="ticker-change up">▲4.11%</span></span>
+        <span class="ticker-item"><span class="ticker-sym">LINK</span><span class="ticker-price">$17.42</span><span class="ticker-change up">▲6.33%</span></span>
+        <span class="ticker-item"><span class="ticker-sym">NEAR</span><span class="ticker-price">$7.91</span><span class="ticker-change up">▲9.14%</span></span>
+        <!-- Duplicate for seamless loop -->
+        <span class="ticker-item"><span class="ticker-sym">BTC</span><span class="ticker-price">$67,420</span><span class="ticker-change up">▲3.42%</span></span>
+        <span class="ticker-item"><span class="ticker-sym">ETH</span><span class="ticker-price">$3,891</span><span class="ticker-change up">▲1.87%</span></span>
+        <span class="ticker-item"><span class="ticker-sym">SOL</span><span class="ticker-price">$189.44</span><span class="ticker-change up">▲5.61%</span></span>
+        <span class="ticker-item"><span class="ticker-sym">BNB</span><span class="ticker-price">$412.80</span><span class="ticker-change down">▼0.93%</span></span>
+        <span class="ticker-item"><span class="ticker-sym">XRP</span><span class="ticker-price">$0.6241</span><span class="ticker-change up">▲2.15%</span></span>
+        <span class="ticker-item"><span class="ticker-sym">ADA</span><span class="ticker-price">$0.5873</span><span class="ticker-change down">▼1.44%</span></span>
+        <span class="ticker-item"><span class="ticker-sym">AVAX</span><span class="ticker-price">$42.67</span><span class="ticker-change up">▲7.22%</span></span>
+        <span class="ticker-item"><span class="ticker-sym">NEAR</span><span class="ticker-price">$7.91</span><span class="ticker-change up">▲9.14%</span></span>
+      </div>
+    </div>
+    <div class="ticker-meta">
+      <span>🌍 <em>Global MCap</em> $2.41T</span>
+      <span>💧 <em>24h Vol</em> $142B</span>
+    </div>
+  </div>
+
+
+  <!-- ── HEADER ───────────────────────────────── -->
+  <header class="header" role="banner">
+
+    <div class="header-left">
+      <h1 class="page-title">
+        <span class="gradient-text">Market</span> Overview
+      </h1>
+
+      <!-- Search -->
+      <div class="search-wrap" role="search">
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <input
+          type="search"
+          id="search-input"
+          placeholder="Search assets, symbols, sectors…"
+          aria-label="Search assets"
+          autocomplete="off"
+        />
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="header-controls">
+
+      <!-- Sort -->
+      <div class="sort-group" role="group" aria-label="Sort options">
+        <span class="sort-label">Sort:</span>
+        <select id="sort-select" aria-label="Sort by">
+          <option value="marketCap">Market Cap</option>
+          <option value="price">Price</option>
+          <option value="change">24h Change</option>
+          <option value="volume">Volume</option>
+          <option value="name">Name</option>
+        </select>
+        <button class="icon-btn" id="sort-dir-btn" aria-label="Toggle sort direction" style="width:28px;height:28px;font-size:0.9rem;border:none;">↓</button>
+      </div>
+
+      <!-- Refresh -->
+      <button class="icon-btn" id="refresh-btn" aria-label="Refresh data">↺</button>
+
+      <!-- Theme toggle -->
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle theme">
+        <span id="theme-icon">🌙</span>
+      </button>
+
+    </div>
+
+    <!-- Live indicator -->
+    <div class="live-status" aria-live="polite">
+      <span id="live-dot" role="status" aria-label="Live data active"></span>
+      <span id="live-clock">--:--:--</span>
+    </div>
+
+  </header>
+
+
+  <!-- ── MAIN ─────────────────────────────────── -->
+  <main class="main" id="main" role="main">
+
+    <!-- ╔══════════════════════════════╗ -->
+    <!-- ║  DASHBOARD VIEW              ║ -->
+    <!-- ╚══════════════════════════════╝ -->
+    <section class="view-section active" data-section="dashboard" aria-label="Dashboard">
+
+      <!-- Stats Strip -->
+      <div class="stats-strip" role="region" aria-label="Summary statistics">
+
+        <div class="stat-card">
+          <div class="stat-icon-row">
+            <div class="stat-icon orange">📊</div>
+            <span class="stat-trend up">+20</span>
+          </div>
+          <div class="stat-value" id="stat-items">—</div>
+          <div class="stat-label">Total Assets</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon-row">
+            <div class="stat-icon coral">♥</div>
+            <span class="stat-trend up" id="fav-trend">Tracked</span>
+          </div>
+          <div class="stat-value" id="stat-favs">—</div>
+          <div class="stat-label">Favorites</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon-row">
+            <div class="stat-icon amber">💰</div>
+            <span class="stat-trend up">Live</span>
+          </div>
+          <div class="stat-value" id="stat-avg">—</div>
+          <div class="stat-label">Average Price</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon-row">
+            <div class="stat-icon gold">🌐</div>
+            <span class="stat-trend up">+12.4%</span>
+          </div>
+          <div class="stat-value" id="stat-total">—</div>
+          <div class="stat-label">Total Market Cap</div>
+        </div>
+
+      </div><!-- /stats-strip -->
+
+      <!-- Section header -->
+      <div class="section-header">
+        <h2 class="section-title">
+          <span class="gradient-text">Live Assets</span>
+          <span class="section-count" id="assets-count">20</span>
+        </h2>
+      </div>
+
+      <!-- Cards grid -->
+      <div id="cards-grid" role="list" aria-label="Asset cards" aria-live="polite" aria-busy="true">
+        <!-- Populated by UI.js renderCards() -->
+      </div>
+
+    </section>
+
+
+    <!-- ╔══════════════════════════════╗ -->
+    <!-- ║  FAVORITES VIEW              ║ -->
+    <!-- ╚══════════════════════════════╝ -->
+    <section class="view-section" data-section="favorites" aria-label="Favorites">
+
+      <!-- Portfolio banner -->
+      <div class="fav-portfolio-banner" role="region" aria-label="Portfolio value">
+        <div>
+          <div class="fav-banner-text">Total Watchlist Value</div>
+          <div class="fav-banner-value" id="fav-total-value">$0.00</div>
+        </div>
+        <div class="fav-banner-icon" aria-hidden="true">💎</div>
+      </div>
+
+      <!-- Section header -->
+      <div class="section-header">
+        <h2 class="section-title">
+          <span class="gradient-text">My Favorites</span>
+          <span class="section-count" id="fav-count-display">0</span>
+        </h2>
+      </div>
+
+      <!-- Empty state -->
+      <div id="fav-empty">
+        <span class="empty-icon">♡</span>
+        <p>No favorites yet — click the heart icon on any asset card to add it here.</p>
+      </div>
+
+      <!-- Favorites grid -->
+      <div id="fav-cards-grid" role="list" aria-label="Favorite asset cards">
+        <!-- Populated by UI.js renderFavorites() -->
+      </div>
+
+    </section>
+
+  </main><!-- /main -->
+
+</div><!-- /app-layout -->
+
+
+<!-- ── GLOBAL UI COMPONENTS ──────────────────── -->
+
+<!-- Error banner -->
+<div class="error-banner" id="error-banner" role="alert" aria-live="assertive"></div>
+
+<!-- Toast notification -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- Loading overlay -->
+<div id="loading-overlay" aria-live="polite" aria-label="Loading market data">Syncing market data…</div>
+
+
+<!-- ── SCRIPTS ────────────────────────────────── -->
+<!--
+  ES6 Module system:
+  App.js imports fetchData from API.js and rendering functions from UI.js
+  All state management is centralized in App.js
+-->
+<script type="module" src="./js/App.js"></script>
+
+</body>
+</html>
