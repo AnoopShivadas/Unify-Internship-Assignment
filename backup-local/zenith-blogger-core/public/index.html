@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ZENITH — The Blogger Core. Premium full-stack blogging platform." />
+  <title>ZENITH — The Blogger Core</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>✦</text></svg>" />
+</head>
+<body>
+
+  <!-- ── Navbar ─────────────────────────────────────────── -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="logo">
+        <span class="logo-dot"></span>
+        ZENITH
+      </a>
+      <div class="navbar-right">
+        <label class="theme-toggle" title="Toggle theme">
+          <input type="checkbox" id="themeToggle" />
+          <div class="toggle-track">
+            <span class="toggle-thumb" id="toggleIcon">🌙</span>
+          </div>
+        </label>
+        <a href="/editor" class="btn btn-primary">
+          <span>✦</span> New Post
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Main ───────────────────────────────────────────── -->
+  <main>
+    <div class="page-wrapper">
+
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero-eyebrow">✦ Your Creative Space</div>
+        <h1 class="hero-title">
+          Write. Publish.<br/><em>Inspire.</em>
+        </h1>
+        <p class="hero-sub">
+          A premium space for your ideas. Craft beautiful stories, share deep thoughts, and build your world — word by word.
+        </p>
+        <div class="hero-actions">
+          <a href="/editor" class="btn btn-primary">✦ Start Writing</a>
+          <a href="#posts" class="btn btn-ghost">↓ Read Posts</a>
+        </div>
+      </section>
+
+      <!-- Posts Section -->
+      <div id="posts">
+        <div class="section-divider">
+          <div class="divider-line"></div>
+          <span>Latest Stories</span>
+          <div class="divider-line"></div>
+          <span class="post-count" id="postCount">— posts</span>
+        </div>
+
+        <!-- Loading Skeleton -->
+        <div class="skeleton-grid" id="skeletonLoader">
+          <div class="skeleton-card">
+            <div class="skeleton-line short"></div>
+            <div class="skeleton-line medium"></div>
+            <div class="skeleton-line tall"></div>
+            <div class="skeleton-line" style="width:80%"></div>
+          </div>
+          <div class="skeleton-card">
+            <div class="skeleton-line short"></div>
+            <div class="skeleton-line medium"></div>
+            <div class="skeleton-line tall"></div>
+            <div class="skeleton-line" style="width:70%"></div>
+          </div>
+          <div class="skeleton-card">
+            <div class="skeleton-line short"></div>
+            <div class="skeleton-line medium"></div>
+            <div class="skeleton-line tall"></div>
+            <div class="skeleton-line" style="width:85%"></div>
+          </div>
+        </div>
+
+        <!-- Blog Grid -->
+        <div class="blog-grid" id="blogGrid" style="display:none;"></div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ── Toast Container ────────────────────────────────── -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

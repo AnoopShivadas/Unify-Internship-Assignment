@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Post — ZENITH</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>✦</text></svg>" />
+</head>
+<body>
+
+  <!-- ── Navbar ─────────────────────────────────────────── -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="logo">
+        <span class="logo-dot"></span>
+        ZENITH
+      </a>
+      <div class="navbar-right">
+        <label class="theme-toggle" title="Toggle theme">
+          <input type="checkbox" id="themeToggle" />
+          <div class="toggle-track">
+            <span class="toggle-thumb" id="toggleIcon">🌙</span>
+          </div>
+        </label>
+        <a href="/editor" class="btn btn-primary">
+          <span>✦</span> New Post
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Post Content ───────────────────────────────────── -->
+  <main class="post-page" id="postContainer">
+
+    <!-- Loading state -->
+    <div id="postLoading">
+      <div class="post-nav">
+        <div class="skeleton-line" style="width:80px;height:16px;"></div>
+        <div class="skeleton-line" style="width:80px;height:16px;"></div>
+      </div>
+      <div class="post-hero">
+        <div class="skeleton-line short" style="margin-bottom:1.25rem;"></div>
+        <div class="skeleton-line medium" style="height:40px;margin-bottom:0.75rem;"></div>
+        <div class="skeleton-line" style="width:60%;height:32px;margin-bottom:1.5rem;"></div>
+        <div class="skeleton-line" style="width:40%;height:14px;"></div>
+      </div>
+      <hr class="post-divider" />
+      <div style="display:flex;flex-direction:column;gap:0.75rem;">
+        <div class="skeleton-line tall"></div>
+        <div class="skeleton-line" style="width:80%"></div>
+        <div class="skeleton-line tall"></div>
+        <div class="skeleton-line" style="width:90%"></div>
+        <div class="skeleton-line" style="width:70%"></div>
+      </div>
+    </div>
+
+    <!-- Actual post (hidden until loaded) -->
+    <div id="postContent" style="display:none;">
+      <div class="post-nav">
+        <a href="/" class="btn-back">← Back to all posts</a>
+        <a href="#" id="editBtn" class="btn btn-ghost">✎ Edit Post</a>
+      </div>
+
+      <article>
+        <header class="post-hero">
+          <span class="category-badge" id="postCategory"></span>
+          <h1 id="postTitle"></h1>
+          <div class="post-meta">
+            <span class="post-meta-item">📅 <span id="postDate"></span></span>
+            <span class="post-meta-item">⏱ <span id="postReadTime"></span></span>
+          </div>
+        </header>
+
+        <hr class="post-divider" />
+
+        <div class="post-content" id="postBody"></div>
+      </article>
+    </div>
+
+    <!-- Error state -->
+    <div id="postError" style="display:none;">
+      <div class="post-nav">
+        <a href="/" class="btn-back">← Back to all posts</a>
+      </div>
+      <div class="empty-state">
+        <div class="empty-icon">🔍</div>
+        <h3>Post not found</h3>
+        <p>This post may have been deleted or the link is invalid.</p>
+        <a href="/" class="btn btn-primary">← Back Home</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ── Toast Container ────────────────────────────────── -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
